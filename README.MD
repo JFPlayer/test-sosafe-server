@@ -65,7 +65,7 @@ Para iniciar este proyecto necesitas crear un archivo .env en la raiz del proyec
 - Lista de resultados filtrados por "palabra clave"
 
 ## Construido con 🛠️
-**Client:** ReactJs, Redux, Sass, ViteJs
+**Server:** Node, Express, socket.io, mongoose
 
 ## Autor ✒️
 **[Joel Flores](https://www.linkedin.com/in/joel-flores-7801/)**
