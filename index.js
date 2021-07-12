@@ -5,7 +5,8 @@ const Socketio = require('socket.io')
 const sockets = require('./sockets')
 const runDB = require('./database')
 
-
+app.set('port', config.port || 3000)
+const PORT = app.get('port')
 
 //create server
 const server = http.createServer(app)
@@ -15,8 +16,8 @@ const io = Socketio(server)
 sockets(io)
 
 //server listening
-server.listen(config.port, () => {
-  console.log(`listening on port ${config.port}`)
+server.listen(PORT, () => {
+  console.log(`listening on port ${PORT}`)
   
   //database
   runDB()

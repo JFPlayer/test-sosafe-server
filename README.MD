@@ -1,42 +1,71 @@
+# Test SOSAFE Server
+_Esta es una aplicación web de evaluación. Tiene como funcionalidad navegar por el mapa del mundo, crear ubicaciones asi como tambien listarlas._
 
-# Test-SOSAFE SERVER
+##Vista previa 
+[![](/preview.jpg)](https://test-sosafe.herokuapp.com/)
+Demo: [Navigate Map](https://test-sosafe.herokuapp.com/)
 
-Esta es una aplicación web de evaluación. Tiene como funcionalidad navegar por el mapa del mundo, crear ubicaciones asi como tambien listarlas.
+##Comenzando 🚀
+_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
 
-## How to start
+###Instalación 🔧
+
+Clonar el proyecto
+```bash
+  git clone https://github.com/JFPlayer/test-sosafe-server.git
 ```
-npm install
-npm run dev
+Ir a la carpeta del proyecto
+```bash
+  cd test-sosafe-server
+```
+Instalar dependencias
+```bash
+  npm install
+```
+Iniciar el servidor de desarrollo
+```bash
+  npm run dev
 ```
 
-## API Reference
+##Referencias de la API :information_source:
 
-#### Get all locations
-
+####Obtener todos las ubicaciones
 ```http
   GET /api/locations
 ```
 
-#### Get filtered locations
-
+####Obtener las ubicaciones filtradas
 ```http
-  GET /api/locations?search=${keyword}
+  GET /api/locations?search=${search}
 ```
 
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `keyword`      | `string` | **Required** |
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `search` | `string` |  Palabra clave para filtrar las ubicaciones |
 
-#### Create new location
-
+####Crear una ubicación
 ```http
   POST /api/locations
 ```
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `description` | `string` |  Título de la ubicación |
+| `latlng.lat` | `string` |  Latitud en notación decimal |
+| `latlng.lng` | `string` |  Longitud en notación decimal |
 
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `description`      | `string` | **Required** |
-| `latlng`      | `Object` | **Required** |
+##Variables de entorno :lock:
+Para iniciar este proyecto necesitas crear un archivo .env en la raiz del proyecto y añadir estas variables de entorno
 
-## Preview
-![](/preview.jpg)
+`PORT`
+`DB_URI` URI de una base de datos de MongoDB
+
+##Caracteristicas 📋
+- Navegacion por el mapa del mundo y entre ubicacion creadas
+- Creación de ubicaciones
+- Lista de resultados filtrados por "palabra clave"
+
+##Construido con 🛠️
+**Client:** ReactJs, Redux, Sass, ViteJs
+
+##Autor ✒️
+**[Joel Flores](https://www.linkedin.com/in/joel-flores-7801/)**
